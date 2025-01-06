@@ -1,50 +1,77 @@
-/* Body and General Page Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
+/* Genre Button - Updated Style */
+button.genre-button {
+    background-color: #444;
     color: #e0e0e0;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-
-h1, h3 {
-    font-family: 'Helvetica Neue', sans-serif;
-    color: #f2f2f2;
-    letter-spacing: 1px;
-}
-
-a {
-    text-decoration: none;
-    color: #e0e0e0;
-}
-
-header {
-    background-color: #1c1c1c;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #333;
-}
-
-header h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-nav {
-    margin-top: 10px;
-}
-
-nav a {
+    border: 1px solid #666;
+    padding: 12px 25px;
     font-size: 1.1em;
-    margin: 0 15px;
-    color: #bbb;
-    transition: color 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 10px;
+    display: inline-block;
 }
 
-nav a:hover {
-    color: #f44336;
+button.genre-button:hover {
+    background-color: #f44336;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+button.genre-button:focus {
+    outline: none;
+}
+
+/* Center Search Box */
+#search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+
+#search-container input {
+    padding: 12px;
+    font-size: 1.2em;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #e0e0e0;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#search-container input:focus {
+    background-color: #333;
+    outline: none;
+}
+
+/* Search Button */
+#search-container button {
+    padding: 12px 20px;
+    font-size: 1.2em;
+    background-color: #f44336;  /* Same as "Read More" button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#search-container button:hover {
+    background-color: #d32f2f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+#search-container button:focus {
+    outline: none;
 }
 
 /* Review Section */
@@ -145,53 +172,6 @@ nav a:hover {
     outline: none;
 }
 
-/* Search Box */
-#search-container {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-#search-container input {
-    padding: 12px;
-    font-size: 1.2em;
-    width: 250px;
-    border-radius: 8px;
-    border: 1px solid #444;
-    background-color: #222;
-    color: #e0e0e0;
-    margin-right: 10px;
-    transition: background-color 0.3s ease;
-}
-
-#search-container input:focus {
-    background-color: #333;
-    outline: none;
-}
-
-#search-container button {
-    padding: 12px 20px;
-    font-size: 1.2em;
-    background-color: #f44336;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-#search-container button:hover {
-    background-color: #d32f2f;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-#search-container button:focus {
-    outline: none;
-}
-
 /* Footer */
 footer {
     background-color: #1c1c1c;
@@ -204,9 +184,4 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-
-#genre-dropdown li:hover {
-    background-color: #444;
 }
