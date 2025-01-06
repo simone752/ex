@@ -1,44 +1,65 @@
 body {
   background-color: black;
-  color: white;
+  color: #e3e3e3;
   font-family: 'Courier New', Courier, monospace;
+  line-height: 1.5;
 }
 
 h1 {
-  font-size: 2.5em;
-  color: #f00;
+  color: red;
+  font-size: 24px;
   text-align: center;
-  margin-top: 50px;
+}
+
+form {
+  margin: 20px;
+  text-align: center;
+}
+
+textarea, input, select {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #222;
+  color: #e3e3e3;
+  border: 1px solid #555;
+  width: 80%;
+}
+
+textarea:focus, input:focus, select:focus {
+  border-color: red;
+  outline: none;
+}
+
+button {
+  background-color: #444;
+  color: red;
+  padding: 10px 20px;
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: red;
+  color: black;
 }
 
 .review {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #555;
   background-color: #111;
-  border: 2px solid #f00;
-  padding: 15px;
-  margin: 10px;
-  max-width: 600px;
-  width: 100%;
 }
 
-.review h2 {
-  color: #f00;
+.review p {
+  margin: 5px 0;
 }
 
-.review img {
-  max-width: 100%;
-  margin-top: 10px;
-}
-
-.return-home {
+select {
+  width: 200px;
   text-align: center;
-  margin-top: 20px;
 }
 
-.return-home a {
-  color: #f00;
-  text-decoration: none;
-  font-size: 1.2em;
-}
 
 .return-home a:hover {
   text-decoration: underline;
