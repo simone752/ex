@@ -3,6 +3,7 @@ const reviews = [
     {
         title: "Stalaggh - Projekt Misanthropia",
         description: "A deep dive into the darkness of human nature.",
+        fullDescription: "This is the full description that will be revealed when clicked. It goes deeper into the details of the album and its impact.",
         genre: "Spoken Word",
         date: "2025-01-01",
         score: "9/10",
@@ -10,50 +11,18 @@ const reviews = [
     },
     {
         title: "Wolf Eyes - Burned Mind",
-        description: "Wolf eyes are quite a famous band in the realm of noise...",
+        description: "Wolf eyes are quite a famous band in the realm of noise and this is one of their most famous projects.",
+        fullDescription: "This is the full review of the album 'Burned Mind' by Wolf Eyes. It explores the harsh and abrasive sounds and their experimental journey in noise music.",
         genre: "Power Electronics",
         date: "2024-12-15",
         score: "7/10",
         image: "images/dark-symphony.jpg"  // Add the path to your image here
     },
-    {
-        title: "Maurizio Bianchi - Symphony for a Genocide",
-        description: "Symphony for a Genocide is a power electronic/death industrial project...",
-        genre: "Power Electronics",
-        date: "1981-01-01",
-        score: "7,5/10",
-        image: "images/projekt-misanthropia.jpg"  // Add the path to your image here
-    },
-    {
-        title: "Impetuous Ritual - Blight Upon Martyred Sentience",
-        description: "Dark and mysterious. A cavernous death metal release",
-        genre: "Dissonant Death Metal",
-        date: "2017-01-01",
-        score: "5,5/10",
-        image: "images/projekt-misanthropia.jpg"  // Add the path to your image here
-    },
-    {
-        title: "Vein - Errorzone",
-        description: "A deep dive into the darkness of human nature.",
-        genre: "Mathcore",
-        date: "2025-01-01",
-        score: "5,5/10",
-        image: "images/projekt-misanthropia.jpg"  // Add the path to your image here
-    },
-    {
-        title: "Pharmakon - Bestial Burden",
-        description: "A deep dive into the darkness of human nature.",
-        genre: "Death Industrial",
-        date: "2014-01-01",
-        score: "6,5/10",
-        image: "images/projekt-misanthropia.jpg"  // Add the path to your image here
-    }
-    // Add more reviews here as needed
+    // Add other reviews here
 ];
 
 // Function to render reviews (with pagination)
 const renderReviews = (searchQuery = "", page = 1) => {
-    // Filter reviews based on the search query (check title and description)
     const filteredReviews = reviews.filter(review =>
         review.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         review.description.toLowerCase().includes(searchQuery.toLowerCase())
@@ -69,14 +38,33 @@ const renderReviews = (searchQuery = "", page = 1) => {
     const container = document.getElementById('reviews-container');
     container.innerHTML = reviewsToShow.map(review => `
         <div class="review">
-            ${review.image ? `<img src="${review.image}" alt="${review.title} artwork" style="max-width: 150px; height: auto;">` : ""}
+            ${review.image ? `<img src="${review.image}" alt="${review.title} artwork">` : ""}
             <h3>${review.title}</h3>
-            <p>${review.description}</p>
-            <p><strong>Genre:</strong> ${review.genre}</p>
-            <p><strong>Release Date:</strong> ${review.date}</p>
-            <p><strong>Score:</strong> ${review.score}</p>
+            <p>${review.description}</p> <!-- Show short description initially -->
+            <button class="read-more-btn">Read More</button>
+            <div class="full-review" style="display: none;">
+                <p>${review.fullDescription}</p> <!-- Full review content -->
+                <p><strong>Genre:</strong> ${review.genre}</p>
+                <p><strong>Release Date:</strong> ${review.date}</p>
+                <p><strong>Score:</strong> ${review.score}</p>
+            </div>
         </div>
     `).join('');
+
+    // Add event listeners to handle "Read More" button clicks
+    const buttons = document.querySelectorAll('.read-more-btn');
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const fullReview = button.nextElementSibling;
+            if (fullReview.style.display === "none") {
+                fullReview.style.display = "block";
+                button.textContent = "Read Less"; // Change button text to "Read Less"
+            } else {
+                fullReview.style.display = "none";
+                button.textContent = "Read More"; // Change button text back to "Read More"
+            }
+        });
+    });
 
     const pagination = document.getElementById('pagination');
     pagination.innerHTML = '';
