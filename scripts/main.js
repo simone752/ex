@@ -12,11 +12,11 @@ const reviews = [
     { title: 'Into the Abyss', description: 'The deeper you go, the darker it gets...', genre: 'Adventure', releaseDate: '2023-02-01', score: '7/10', image: 'images/your-image.jpg' }
 ];
 
-let filteredReviews = reviews;
+let filteredReviews = [];
 
-const renderReviews = (filteredReviews = reviews) => {
+const renderReviews = (filteredReviews = []) => {
     const container = document.getElementById('reviews-container');
-    container.innerHTML = filteredReviews.map(review => `
+    container.innerHTML = filteredReviews.length > 0 ? filteredReviews.map(review => `
         <div class="review">
             <div class="review-container">
                 <img src="${review.image}" alt="${review.title} Artwork">
@@ -29,7 +29,7 @@ const renderReviews = (filteredReviews = reviews) => {
                 </div>
             </div>
         </div>
-    `).join('');
+    `).join('') : `<p>No reviews found. Try searching for something else.</p>`;
 };
 
 const filterReviews = () => {
@@ -42,5 +42,6 @@ const filterReviews = () => {
     renderReviews(filteredReviews);
 };
 
-// Initially render all reviews
+// Initially render empty (no reviews)
 renderReviews();
+
