@@ -46,5 +46,13 @@
         "date": "1998-01-01",
         "score": "4.5/10",
         "image": "images/bestial-burden.jpg"
+    },
+    {
+        "title": "Nurse with Wound - Homotopy to Marie",
+        "description": "A visceral journey through industrial soundscapes.",
+        "genre": "Experimental",
+        "date": "1982-01-01",
+        "score": "7.5/10",
+        "image": "images/6484-homotopy-to-marie.jpg"
     }
 ]
