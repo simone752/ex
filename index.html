@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Reviews</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Creepy Blog</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Write a Review</h1>
-  <form id="review-form">
-    <textarea id="review-text" placeholder="Your haunting words..."></textarea>
-    <input type="date" id="review-date" required>
-    <input type="text" id="review-genre" placeholder="Genre (e.g., Horror, Thriller)" required>
-    <button type="submit">Submit Review</button>
-  </form>
-
-  <h1>Filter by Genre</h1>
-  <select id="genre-filter">
-    <option value="">All Genres</option>
-  </select>
-
-  <div id="reviews">
-    <!-- Reviews will appear here -->
-  </div>
-
-  <script src="scripts.js"></script>
+    <header>
+        <h1>The Creepy Blog</h1>
+        <nav>
+            <button id="genre-filter">Genres</button>
+            <ul id="genre-dropdown" class="hidden"></ul>
+            <a href="reviews.html">All Reviews</a>
+            <a href="add-review.html">Add a Review</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome to The Creepy Blog</h2>
+        <p>Explore dark and mysterious reviews.</p>
+    </main>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
-
