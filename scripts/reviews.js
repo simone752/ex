@@ -1,11 +1,11 @@
 const reviews = [
     {
-        title: 'Darkness Beyond the Walls',
+        title: 'Stalaggh - Projekt Misanthropia',
         description: 'A truly disturbing horror experience that haunts your thoughts long after the game ends.',
         genre: 'Horror',
-        releaseDate: '2023-12-01',
-        score: '9/10',
-        image: 'images/darkness-beyond-the-walls.jpg' // Add path to artwork image
+        releaseDate: '2007-01-01',
+        score: '2/10',
+        image: 'images/86179-projekt-misanthropia.jpg' // Add path to artwork image
     },
     {
         title: 'The Haunting of the Forgotten House',
