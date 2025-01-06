@@ -12,17 +12,11 @@ const reviews = [
     { title: 'Into the Abyss', description: 'The deeper you go, the darker it gets...', genre: 'Adventure', releaseDate: '2023-02-01', score: '7/10', image: 'images/your-image.jpg' }
 ];
 
-let currentPage = 1;
-let reviewsPerPage = 5;
 let filteredReviews = reviews;
 
-const renderReviews = () => {
+const renderReviews = (filteredReviews = reviews) => {
     const container = document.getElementById('reviews-container');
-    const startIndex = (currentPage - 1) * reviewsPerPage;
-    const endIndex = startIndex + reviewsPerPage;
-    const reviewsToDisplay = filteredReviews.slice(startIndex, endIndex);
-
-    container.innerHTML = reviewsToDisplay.map(review => `
+    container.innerHTML = filteredReviews.map(review => `
         <div class="review">
             <div class="review-container">
                 <img src="${review.image}" alt="${review.title} Artwork">
@@ -36,35 +30,19 @@ const renderReviews = () => {
             </div>
         </div>
     `).join('');
-
-    document.getElementById('prev-page').disabled = currentPage === 1;
-    document.getElementById('next-page').disabled = currentPage * reviewsPerPage >= filteredReviews.length;
 };
 
-const searchReviews = () => {
+const filterReviews = () => {
     const query = document.getElementById('search-bar').value.toLowerCase();
     filteredReviews = reviews.filter(review =>
         review.title.toLowerCase().includes(query) ||
         review.description.toLowerCase().includes(query) ||
         review.genre.toLowerCase().includes(query)
     );
-    currentPage = 1; // Reset to the first page after search
-    renderReviews();
-};
-
-const filterReviews = () => {
-    const query = document.getElementById('search-bar').value.toLowerCase();
-    if (query) {
-        searchReviews();
-    }
-};
-
-// Change page for pagination
-const changePage = (direction) => {
-    currentPage += direction;
-    renderReviews();
+    renderReviews(filteredReviews);
 };
 
 // Initially render all reviews
 renderReviews();
+
 
