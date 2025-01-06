@@ -10,10 +10,10 @@
     <header>
         <h1>The Cabinet of Extremities</h1>
     </header>
-    
+
     <nav>
         <a href="index.html" class="active">Home</a>
-        <a href="reviews.html">All Reviews</a>
+        <a id="all-reviews-link" href="reviews.html">All Reviews</a>
         <div id="search-container">
             <input type="text" id="search-input" placeholder="Search for reviews...">
             <button id="search-button">Search</button>
@@ -28,7 +28,13 @@
         <p>© 2025 The Cabinet of Extremities. All Rights Reserved.</p>
     </footer>
 
-    <script src="main.js"></script>
+    <script>
+        const allReviewsLink = document.getElementById('all-reviews-link');
+        document.getElementById('search-button').addEventListener('click', () => {
+            const searchQuery = document.getElementById('search-input').value;
+            const searchParam = searchQuery ? `?search=${encodeURIComponent(searchQuery)}` : '';
+            allReviewsLink.href = `reviews.html${searchParam}`;
+        });
+    </script>
 </body>
 </html>
-
