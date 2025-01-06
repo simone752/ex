@@ -1,0 +1,62 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+h1, h2 {
+    color: #f00;
+    font-weight: bold;
+}
+
+nav a {
+    color: #f00;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #f00;
+    background-color: #222;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #444;
+}
+
+main {
+    padding: 20px;
+}
+
+#reviews-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.review {
+    background-color: #333;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.review h3 {
+    color: #f00;
+    font-size: 1.2em;
+}
+
+.review p {
+    margin: 5px 0;
+}
+
+.review strong {
+    color: #f00;
+}
