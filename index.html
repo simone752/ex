@@ -10,27 +10,40 @@
     <header>
         <h1>The Cabinet of Extremities</h1>
     </header>
-    
+
     <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="reviews.html">All Reviews</a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="reviews.html">All Reviews</a>
+        </div>
         <div id="search-container">
-            <input type="text" id="search-input" placeholder="Search for reviews...">
+            <input type="text" id="search-bar" placeholder="Search for reviews...">
             <button id="search-button">Search</button>
         </div>
     </nav>
 
     <main>
         <section id="intro">
-            <p>Welcome to <strong>The Cabinet of Extremities</strong>, your gateway into the darkest, most evocative corners of experimental music. Explore reviews of haunting, obscure, and thought-provoking albums.</p>
+            <h2>Welcome to the Cabinet</h2>
+            <p>
+                Discover the darkest corners of the underground music scene. From industrial despair to dissonant death metal, 
+                delve into reviews that capture the essence of extremity.
+            </p>
         </section>
-        
+
+        <section id="action-buttons">
+            <button onclick="window.location.href='reviews.html'">Explore All Reviews</button>
+        </section>
+
+        <section id="reviews-container">
+            <!-- Reviews dynamically inserted here -->
+        </section>
     </main>
-    
+
     <footer>
         <p>© 2025 The Cabinet of Extremities. All Rights Reserved.</p>
     </footer>
-    
+
     <script src="scripts/main.js"></script>
 </body>
 </html>
