@@ -1,64 +1,4 @@
-/* Global Styles */
-body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #111;
-    padding: 10px;
-    text-align: center;
-}
-
-h1, h2 {
-    color: #f00;
-}
-
-nav {
-    margin-top: 10px;
-}
-
-a, button {
-    color: #f00;
-    text-decoration: none;
-    border: 1px solid #f00;
-    background-color: #111;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-button:hover, a:hover {
-    background-color: #222;
-}
-
-.search-container {
-    margin: 20px;
-    text-align: center;
-}
-
-#search-input {
-    padding: 5px;
-    font-size: 16px;
-    width: 60%;
-    border: 1px solid #f00;
-    background-color: #111;
-    color: #fff;
-}
-
-#search-button {
-    padding: 5px 10px;
-    margin-left: 10px;
-    border: 1px solid #f00;
-    background-color: #111;
-}
-
-#reviews-container {
-    margin: 20px;
-}
-
+/* General Styles for the Reviews */
 .review {
     margin-bottom: 20px;
     border-bottom: 1px solid #f00;
@@ -66,20 +6,26 @@ button:hover, a:hover {
 }
 
 .review img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-right: 20px;
-    float: left;
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
 }
 
-#pagination {
-    text-align: center;
-    margin-top: 20px;
+.review .full-review {
+    margin-top: 10px;
+    font-size: 1.1em;
 }
 
-button {
-    margin: 0 5px;
+/* Style for the Read More button */
+.read-more-btn {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-
+.read-more-btn:hover {
+    background-color: #d00;
+}
