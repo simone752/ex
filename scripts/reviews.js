@@ -10,22 +10,20 @@ const reviews = [
     },
     {
         title: "Wolf Eyes - Burned Mind",
-        description: "Wolf eyes are quite a famous band in the realm of noise and this is one of their most famous projects, often times quoted as a gateway album in the musical genre known as noise. Each song is a compendium of noises (static screeches, buzzes, feedback and so on) and screams with the clear intention of creating an atmosphere as dark and abrasive as possible. Most of the songs on here work perfectly and coherently to this theme of oppression and violence, though in the second half the musical ideas become less powerful like on "Urine Burn" or "Ancient Delay". All considered a solid release and a good starting point to venture in the dark underground of noise music.",
+        description: "Wolf eyes are quite a famous band in the realm of noise...",
         genre: "Power Electronics",
         date: "2024-12-15",
         score: "7/10",
         image: "images/dark-symphony.jpg"  // Add the path to your image here
     },
-
-{
+    {
         title: "Maurizio Bianchi - Symphony for a Genocide",
-        description: "Symphony for a Genocide is a power electronic/death industrial project from 1981 by the Italian noise master Maurizio Bianchi. This project paints the stark and dehumanizing atmosphere of the concentration camps during WWII. The name of the tracks remind us of these places of terror and the music in them is mechanic, unrelenting and repetitive, like a dementia infused version of Throbbing Gristle. The music doesn't reach the intensity of other acts, but the emotional impact in the listener is powerful. While listening to this record you can clearly imagine the agony and oppression of the inhabitants of these prisons. The repetitiveness of their tasks without hope for their future is well represented by the constant noises you'll hear that become iincreasingly insufferable after a while. One of the most creative and dark releases in power electronics.",
+        description: "Symphony for a Genocide is a power electronic/death industrial project...",
         genre: "Power Electronics",
         date: "1981-01-01",
         score: "7,5/10",
         image: "images/projekt-misanthropia.jpg"  // Add the path to your image here
     },
-
     {
         title: "Impetuous Ritual - Blight Upon Martyred Sentience",
         description: "Dark and mysterious. A cavernous death metal release",
@@ -34,8 +32,7 @@ const reviews = [
         score: "5,5/10",
         image: "images/projekt-misanthropia.jpg"  // Add the path to your image here
     },
-
-        {
+    {
         title: "Vein - Errorzone",
         description: "A deep dive into the darkness of human nature.",
         genre: "Mathcore",
@@ -43,16 +40,14 @@ const reviews = [
         score: "5,5/10",
         image: "images/projekt-misanthropia.jpg"  // Add the path to your image here
     },
-
-                    {
+    {
         title: "Pharmakon - Bestial Burden",
         description: "A deep dive into the darkness of human nature.",
         genre: "Death Industrial",
         date: "2014-01-01",
         score: "6,5/10",
         image: "images/projekt-misanthropia.jpg"  // Add the path to your image here
-    },
-        
+    }
     // Add more reviews here as needed
 ];
 
@@ -74,7 +69,7 @@ const renderReviews = (searchQuery = "", page = 1) => {
     const container = document.getElementById('reviews-container');
     container.innerHTML = reviewsToShow.map(review => `
         <div class="review">
-            ${review.image ? `<img src="${review.image}" alt="${review.title} artwork">` : ""}
+            ${review.image ? `<img src="${review.image}" alt="${review.title} artwork" style="max-width: 150px; height: auto;">` : ""}
             <h3>${review.title}</h3>
             <p>${review.description}</p>
             <p><strong>Genre:</strong> ${review.genre}</p>
@@ -97,4 +92,3 @@ const renderReviews = (searchQuery = "", page = 1) => {
 // Initialize the reviews list and apply search if a query is provided
 const initialSearchQuery = new URLSearchParams(window.location.search).get('search') || '';
 renderReviews(initialSearchQuery);
-
