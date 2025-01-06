@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
-    background-color: #111;
-    color: #fff;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
@@ -12,12 +12,12 @@ header {
     text-align: center;
     background-color: #222;
     padding: 30px 0;
-    color: #f00;
+    color: #ff4500;
+    text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin: 0;
+    font-size: 3rem;
 }
 
 /* Navigation Bar */
@@ -30,17 +30,19 @@ nav {
 }
 
 nav a {
-    color: #f00;
+    color: #ff4500;
     text-decoration: none;
     padding: 10px 20px;
     margin: 0 10px;
     font-size: 1.2rem;
-    border: 1px solid #f00;
+    border: 1px solid #ff4500;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #f00;
-    color: #111;
+    background-color: #ff4500;
+    color: #fff;
 }
 
 #search-container {
@@ -52,7 +54,7 @@ nav a:hover {
 #search-input {
     padding: 8px;
     font-size: 1rem;
-    border: 1px solid #f00;
+    border: 1px solid #ff4500;
     background-color: #333;
     color: #fff;
     margin-right: 5px;
@@ -61,14 +63,15 @@ nav a:hover {
 #search-button {
     padding: 8px 15px;
     font-size: 1rem;
-    background-color: #f00;
-    border: 1px solid #f00;
+    background-color: #ff4500;
+    border: 1px solid #ff4500;
     color: #111;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #search-button:hover {
-    background-color: #f77;
+    background-color: #ff6347;
 }
 
 /* Reviews Container */
@@ -78,30 +81,34 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.review {
+    display: flex;
+    gap: 20px;
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
 }
 
 .review img {
-    max-width: 150px;
-    height: auto;
-    display: block;
-    margin: 10px 0;
+    max-width: 120px;
+    border-radius: 5px;
 }
 
 .review h3 {
-    font-size: 1.5rem;
-    color: #f00;
-    margin-bottom: 10px;
-}
-
-.review p {
-    line-height: 1.6;
+    color: #ff4500;
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #222;
-    color: #fff;
+    background-color: #111;
+    padding: 15px;
+    border-top: 1px solid #444;
 }
 
 /* Pagination */
@@ -116,13 +123,15 @@ footer {
     padding: 8px 15px;
     font-size: 1rem;
     background-color: #222;
-    border: 1px solid #f00;
-    color: #f00;
+    border: 1px solid #ff4500;
+    color: #ff4500;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #pagination button:hover {
-    background-color: #f00;
-    color: #111;
+    background-color: #ff4500;
+    color: #fff;
 }
 
