@@ -7,7 +7,38 @@ const reviews = [
         score: "9/10",
         image: "images/projekt-misanthropia.jpg"
     },
-    // Additional reviews here...
+    {
+        title: "Wolf Eyes - Burned Mind",
+        description: "Wolf eyes are quite a famous band in the realm of noise...",
+        genre: "Power Electronics",
+        date: "2024-12-15",
+        score: "7/10",
+        image: "images/dark-symphony.jpg"
+    },
+    {
+        title: "Maurizio Bianchi - Symphony for a Genocide",
+        description: "A dark and impactful industrial release.",
+        genre: "Death Industrial",
+        date: "1981-01-01",
+        score: "7.5/10",
+        image: "images/symphony-genocide.jpg"
+    },
+    {
+        title: "Impetuous Ritual - Blight Upon Martyred Sentience",
+        description: "A cavernous death metal release.",
+        genre: "Dissonant Death Metal",
+        date: "2017-01-01",
+        score: "5.5/10",
+        image: "images/blight-upon.jpg"
+    },
+    {
+        title: "Pharmakon - Bestial Burden",
+        description: "A visceral journey through industrial soundscapes.",
+        genre: "Death Industrial",
+        date: "2014-01-01",
+        score: "6.5/10",
+        image: "images/bestial-burden.jpg"
+    }
 ];
 
 const renderReviews = (searchQuery = "", page = 1) => {
@@ -56,7 +87,9 @@ const renderReviews = (searchQuery = "", page = 1) => {
     }
 };
 
+// Initialize reviews on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const initialSearchQuery = new URLSearchParams(window.location.search).get('search') || '';
-    renderReviews(initialSearchQuery);
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('search') || '';
+    renderReviews(searchQuery);
 });
