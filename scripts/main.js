@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBar = document.getElementById('search-bar');
     const reviewsContainer = document.getElementById('reviews-container');
 
+    if (!searchButton || !searchBar || !reviewsContainer) {
+        console.error('Error: Missing essential elements in the DOM.');
+        return;
+    }
+
     // Function to load reviews
     async function loadReviews() {
         try {
@@ -50,5 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load all reviews on page load
     renderReviews();
 });
+
 
 
