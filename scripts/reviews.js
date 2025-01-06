@@ -1,6 +1,22 @@
 // Hardcoded Reviews Array (example reviews, same as before)
 const reviews = [
-    // Your review objects go here
+    {
+        title: "Projekt Misanthropia",
+        description: "A deep dive into the darkness of human nature.",
+        genre: "Horror",
+        date: "2025-01-01",
+        score: "9/10",
+        image: "images/projekt-misanthropia.jpg"  // Add the path to your image here
+    },
+    {
+        title: "Dark Symphony",
+        description: "An eerie musical journey filled with tension.",
+        genre: "Music",
+        date: "2024-12-15",
+        score: "8/10",
+        image: "images/dark-symphony.jpg"  // Add the path to your image here
+    },
+    // Add more reviews here as needed
 ];
 
 // Function to render reviews (with pagination)
