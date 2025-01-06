@@ -23,6 +23,7 @@ header {
     background-color: #1c1c1c;
     padding: 20px;
     text-align: center;
+    border-bottom: 2px solid #333;
 }
 
 header h1 {
@@ -148,27 +149,33 @@ nav a:hover {
 #search-container {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 #search-container input {
-    padding: 10px;
+    padding: 12px;
     font-size: 1.2em;
     width: 300px;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1px solid #444;
     background-color: #222;
     color: #e0e0e0;
     margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#search-container input:focus {
+    background-color: #333;
+    outline: none;
 }
 
 #search-container button {
-    padding: 10px 15px;
+    padding: 12px 20px;
     font-size: 1.2em;
     background-color: #f44336;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
@@ -183,22 +190,119 @@ nav a:hover {
     outline: none;
 }
 
-/* Extra Design for the Navigation Dropdown (if needed) */
-#genre-dropdown {
-    display: none;
-    background-color: #222;
-    border: 1px solid #444;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    padding: 10px;
-    list-style: none;
+/* Footer (Optional Additions for a Minimal Blog) */
+footer {
+    background-color: #1c1c1c;
+    color: #bbb;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1em;
+    border-top: 2px solid #333;
 }
 
-#genre-dropdown li {
-    padding: 10px;
-    cursor: pointer;
+footer p {
+    margin: 0;
 }
+
+/* Blog Post Styling */
+#blog-posts-container {
+    margin: 30px auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.blog-post {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    background-color: #333;
+}
+
+.blog-post h2 {
+    color: #f44336;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+.blog-post p {
+    color: #ccc;
+    font-size: 1.2em;
+}
+
+.blog-post a {
+    color: #f44336;
+    text-decoration: none;
+}
+
+.blog-post a:hover {
+    color: #d32f2f;
+}
+
+/* Blog List and Sidebar */
+#blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+#blog-sidebar h3 {
+    color: #f44336;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#blog-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#blog-sidebar ul li {
+    padding: 10px;
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+#blog-sidebar ul li:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* General Blog Navigation Styles */
+#blog-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#blog-nav button {
+    padding: 10px 15px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#blog-nav button:hover {
+    background-color: #d32f2f;
+}
+
+#blog-nav button:focus {
+    outline: none;
+}
+
 
 #genre-dropdown li:hover {
     background-color: #444;
