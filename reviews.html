@@ -3,78 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reviews</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: 'Courier New', Courier, monospace;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      font-size: 2em;
-      color: #f00;
-    }
-
-    .review {
-      background-color: #111;
-      border: 2px solid #f00;
-      padding: 15px;
-      margin: 10px 0;
-      width: 100%;
-      max-width: 600px;
-    }
-
-    .review h2 {
-      color: #f00;
-    }
-
-    .review img {
-      max-width: 100%;
-      margin-top: 10px;
-    }
-
-    .return-home {
-      margin-top: 20px;
-    }
-
-    .return-home a {
-      color: #f00;
-      text-decoration: none;
-      font-size: 1.2em;
-    }
-
-    .return-home a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>All Reviews</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Reviews</h1>
+  <h1>All Reviews</h1>
 
-  <!-- Example of one review -->
-  <div class="review">
-    <h2>Stalaggh - Projekt Misanthropia</h2>
-    <p>Terrible album of spoken text</p>
-    <p><strong>Score:</strong> 2/10</p>
-    <img src="https://via.placeholder.com/600x400/000000/FFFFFF/?text=Movie+Poster" alt="Review Image">
+  <h2>Filter by Genre</h2>
+  <select id="genre-filter">
+    <option value="">All Genres</option>
+  </select>
+
+  <div id="reviews">
+    <!-- Reviews will be dynamically populated here -->
   </div>
 
-  <!-- Another example of a review -->
-  <div class="review">
-    <h2>Wolf Eyes - Burned Mind</h2>
-    <p>Wolf eyes are quite a famous band in the realm of noise and this is one of their most famous projects, often times quoted as a gateway album in the musical genre known as noise. Each song is a compendium of noises (static screeches, buzzes, feedback and so on) and screams with the clear intention of creating an atmosphere as dark and abrasive as possible. Most of the songs on here work perfectly and coherently to this theme of oppression and violence, though in the second half the musical ideas become less powerful like on "Urine Burn" or "Ancient Delay". All considered a solid release and a good starting point to venture in the dark underground of noise music.</p>
-    <p><strong>Score:</strong> 7/10</p>
-    <img src="https://via.placeholder.com/600x400/000000/FFFFFF/?text=Another+Poster" alt="Review Image">
-  </div>
+  <script>
+    // Load reviews from localStorage
+    const reviews = JSON.parse(localStorage.getItem("reviews") || "[]");
 
-  <div class="return-home">
-    <a href="index.html">Return to Homepage</a>
-  </div>
+    // Display reviews
+    function displayReviews(genreFilter = null) {
+      const reviewList = document.getElementById("reviews");
+      reviewList.innerHTML = "";
+      const filteredReviews = genreFilter
+        ? reviews.filter((r) => r.genre.toLowerCase() === genreFilter.toLowerCase())
+        : reviews;
+
+      filteredReviews.forEach(({ text, date, genre }) => {
+        const reviewDiv = document.createElement("div");
+        reviewDiv.className = "review";
+        reviewDiv.innerHTML = `
+          <p>${text}</p>
+          <p><strong>Date:</strong> ${date}</p>
+          <p><strong>Genre:</strong> ${genre}</p>
+        `;
+        reviewList.appendChild(reviewDiv);
+      });
+    }
+
+    // Update genre dropdown
+    function updateGenreDropdown() {
+      const genres = [...new Set(reviews.map((r) => r.genre))]; // Unique genres
+      const dropdown = document.getElementById("genre-filter");
+      dropdown.innerHTML = '<option value="">All Genres</option>';
+      genres.forEach((genre) => {
+        const option = document.createElement("option");
+        option.value = genre;
+        option.textContent = genre;
+        dropdown.appendChild(option);
+      });
+    }
+
+    // Handle genre filtering
+    document.getElementById("genre-filter").addEventListener("change", (e) => {
+      displayReviews(e.target.value);
+    });
+
+    // Initialize page
+    displayReviews();
+    updateGenreDropdown();
+  </script>
 </body>
 </html>
+
