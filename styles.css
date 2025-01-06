@@ -1,4 +1,23 @@
-/* Navigation Bar */
+/* General Styles for Dark Theme */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #e0e0e0;
+    background-color: #121212;  /* Deep black background */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: normal;
+    color: #f44336;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Navigation Bar (includes search input) */
 nav {
     background-color: #1c1c1c;
     padding: 15px 0;
@@ -6,6 +25,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 nav a {
@@ -27,19 +47,22 @@ nav a.active {
     font-weight: bold;
 }
 
-/* Search Bar in Navigation */
+/* Search Bar inside Navigation */
 #search-container {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-left: 30px;
+    background-color: #333;
+    padding: 8px 20px;
+    border-radius: 8px;
 }
 
 #search-container input {
-    padding: 10px 15px;
-    font-size: 1.1em;
-    width: 220px;
+    padding: 12px;
+    font-size: 1.2em;
+    width: 250px;
     border-radius: 8px;
-    border: 1px solid #444;
+    border: none;
     background-color: #222;
     color: #e0e0e0;
     margin-right: 10px;
@@ -52,8 +75,8 @@ nav a.active {
 }
 
 #search-container button {
-    padding: 10px 20px;
-    font-size: 1.1em;
+    padding: 12px 20px;
+    font-size: 1.2em;
     background-color: #f44336;
     color: #fff;
     border: none;
@@ -73,5 +96,108 @@ nav a.active {
 
 #search-container button:focus {
     outline: none;
+}
+
+/* Reviews Section */
+#reviews-container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.review:hover {
+    transform: translateY(-5px);
+    background-color: #333;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.review img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.review h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #f44336;
+}
+
+.review p {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.review .read-more-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.review .read-more-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Pagination */
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#pagination button {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+#pagination button:hover {
+    background-color: #f44336;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #1c1c1c;
+    color: #bbb;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1.2em;
+    border-top: 2px solid #333;
+}
+
+footer p {
+    margin: 0;
 }
 
