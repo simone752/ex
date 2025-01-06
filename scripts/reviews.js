@@ -1,65 +1,64 @@
-let reviews = []; // Global variable to store reviews
-
-// Fetch reviews from JSON file
-const fetchReviews = async () => {
-    try {
-        const response = await fetch('reviews.json'); // Path to your JSON file
-        if (!response.ok) throw new Error('Failed to fetch reviews.');
-        reviews = await response.json();
-        renderReviews(); // Render reviews after fetching
-    } catch (error) {
-        console.error(error);
-        document.getElementById('reviews-container').innerHTML = "<p>Failed to load reviews. Please try again later.</p>";
-    }
-};
-
-// Render Reviews Function
-const renderReviews = (searchQuery = "", page = 1) => {
+document.addEventListener('DOMContentLoaded', () => {
+    const reviewsContainer = document.getElementById('reviews-container');
+    const paginationContainer = document.getElementById('pagination');
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    let reviews = [];
+    let currentPage = 1;
     const reviewsPerPage = 5;
 
-    // Filter reviews by search query
-    const filteredReviews = reviews.filter(review =>
-        review.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        review.description.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    // Fetch reviews from JSON
+    fetch('reviews.json')
+        .then(response => response.json())
+        .then(data => {
+            reviews = data;
+            renderReviews();
+        });
 
-    // Pagination
-    const totalPages = Math.ceil(filteredReviews.length / reviewsPerPage);
-    const startIndex = (page - 1) * reviewsPerPage;
-    const endIndex = page * reviewsPerPage;
+    // Render reviews
+    function renderReviews(searchQuery = '', page = 1) {
+        const filteredReviews = reviews.filter(review =>
+            review.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            review.description.toLowerCase().includes(searchQuery.toLowerCase())
+        );
 
-    const reviewsToShow = filteredReviews.slice(startIndex, endIndex);
+        const totalPages = Math.ceil(filteredReviews.length / reviewsPerPage);
+        const start = (page - 1) * reviewsPerPage;
+        const paginatedReviews = filteredReviews.slice(start, start + reviewsPerPage);
 
-    // Populate Reviews
-    const container = document.getElementById('reviews-container');
-    container.innerHTML = reviewsToShow.map(review => `
-        <div class="review">
-            <img src="${review.image}" alt="${review.title} artwork">
-            <h3>${review.title}</h3>
-            <p>${review.description}</p>
-            <p><strong>Genre:</strong> ${review.genre}</p>
-            <p><strong>Release Date:</strong> ${review.date}</p>
-            <p><strong>Score:</strong> ${review.score}</p>
-        </div>
-    `).join('');
+        reviewsContainer.innerHTML = paginatedReviews.map(review => `
+            <div class="review">
+                <img src="${review.image}" alt="${review.title}">
+                <h3>${review.title}</h3>
+                <p>${review.description}</p>
+                <p><strong>Genre:</strong> ${review.genre}</p>
+                <p><strong>Release Date:</strong> ${review.date}</p>
+                <p><strong>Score:</strong> ${review.score}</p>
+            </div>
+        `).join('');
 
-    // Populate Pagination
-    const pagination = document.getElementById('pagination');
-    pagination.innerHTML = "";
-
-    for (let i = 1; i <= totalPages; i++) {
-        const button = document.createElement('button');
-        button.textContent = i;
-        button.addEventListener('click', () => renderReviews(searchQuery, i));
-        pagination.appendChild(button);
+        renderPagination(totalPages, searchQuery);
     }
-};
 
-// Event Listener for Search
-document.getElementById('search-button').addEventListener('click', () => {
-    const query = document.getElementById('search-input').value.trim();
-    renderReviews(query);
+    // Render pagination
+    function renderPagination(totalPages, searchQuery) {
+        paginationContainer.innerHTML = '';
+        for (let i = 1; i <= totalPages; i++) {
+            const button = document.createElement('button');
+            button.textContent = i;
+            button.onclick = () => {
+                currentPage = i;
+                renderReviews(searchQuery, i);
+            };
+            if (i === currentPage) button.classList.add('active');
+            paginationContainer.appendChild(button);
+        }
+    }
+
+    // Search functionality
+    searchButton.addEventListener('click', () => {
+        const query = searchInput.value.trim();
+        currentPage = 1;
+        renderReviews(query, currentPage);
+    });
 });
-
-// Initialize on Page Load
-document.addEventListener('DOMContentLoaded', fetchReviews);
