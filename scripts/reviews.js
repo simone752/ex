@@ -1,4 +1,4 @@
-// Search functionality for homepage
+// Hardcoded Reviews Array
 const reviews = [
     {
         title: "Stalaggh - Projekt Misanthropia",
@@ -15,36 +15,83 @@ const reviews = [
         date: "2024-12-15",
         score: "7/10",
         image: "images/dark-symphony.jpg"
+    },
+    {
+        title: "Maurizio Bianchi - Symphony for a Genocide",
+        description: "A dark and impactful industrial release.",
+        genre: "Death Industrial",
+        date: "1981-01-01",
+        score: "7.5/10",
+        image: "images/symphony-genocide.jpg"
+    },
+    {
+        title: "Impetuous Ritual - Blight Upon Martyred Sentience",
+        description: "A cavernous death metal release.",
+        genre: "Dissonant Death Metal",
+        date: "2017-01-01",
+        score: "5.5/10",
+        image: "images/blight-upon.jpg"
+    },
+    {
+        title: "Pharmakon - Bestial Burden",
+        description: "A visceral journey through industrial soundscapes.",
+        genre: "Death Industrial",
+        date: "2014-01-01",
+        score: "6.5/10",
+        image: "images/bestial-burden.jpg"
     }
 ];
 
+// Render Reviews Function
+const renderReviews = (searchQuery = "", page = 1) => {
+    const reviewsPerPage = 5;
 
-const renderReviews = (searchQuery = "") => {
+    // Filter reviews by search query
     const filteredReviews = reviews.filter(review =>
         review.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         review.description.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
+    // Pagination
+    const totalPages = Math.ceil(filteredReviews.length / reviewsPerPage);
+    const startIndex = (page - 1) * reviewsPerPage;
+    const endIndex = page * reviewsPerPage;
+
+    const reviewsToShow = filteredReviews.slice(startIndex, endIndex);
+
+    // Populate Reviews
     const container = document.getElementById('reviews-container');
-    container.innerHTML = filteredReviews.map(review => `
+    container.innerHTML = reviewsToShow.map(review => `
         <div class="review">
-            ${review.image ? `<img src="${review.image}" alt="${review.title} artwork">` : ""}
+            <img src="${review.image}" alt="${review.title} artwork">
             <h3>${review.title}</h3>
             <p>${review.description}</p>
+            <p><strong>Genre:</strong> ${review.genre}</p>
             <p><strong>Release Date:</strong> ${review.date}</p>
             <p><strong>Score:</strong> ${review.score}</p>
         </div>
     `).join('');
+
+    // Populate Pagination
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.addEventListener('click', () => renderReviews(searchQuery, i));
+        pagination.appendChild(button);
+    }
 };
 
-// Add event listener for search
+// Event Listener for Search
 document.getElementById('search-button').addEventListener('click', () => {
-    const searchQuery = document.getElementById('search-input').value;
-    renderReviews(searchQuery);
+    const query = document.getElementById('search-bar').value;
+    renderReviews(query);
 });
 
-// Initial render
-renderReviews();
+// Initialize on Page Load
+document.addEventListener('DOMContentLoaded', () => renderReviews());
 
 
 // Initialize the reviews list and apply search if a query is provided
