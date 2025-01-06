@@ -1,5 +1,5 @@
 const reviews = [
-    { title: 'Darkness Beyond the Walls', description: 'A truly disturbing horror experience...', genre: 'Horror', releaseDate: '2007-01-01', score: '2/10', image: 'images/86179-projekt-misanthropia.jpg' },
+    { title: 'Darkness Beyond the Walls', description: 'A truly disturbing horror experience...', genre: 'Horror', releaseDate: '2023-12-01', score: '9/10', image: 'images/your-image.jpg' },
     { title: 'The Haunting of the Forgotten House', description: 'A chilling tale of an abandoned mansion...', genre: 'Supernatural', releaseDate: '2023-11-20', score: '8/10', image: 'images/your-image.jpg' },
     { title: 'Whispers in the Dark', description: 'A psychological thriller that keeps you on the edge...', genre: 'Thriller', releaseDate: '2023-10-15', score: '7/10', image: 'images/your-image.jpg' },
     { title: 'Nightmare in the Depths', description: 'A haunting journey into the abyss...', genre: 'Horror', releaseDate: '2023-09-25', score: '8/10', image: 'images/your-image.jpg' },
@@ -12,9 +12,17 @@ const reviews = [
     { title: 'Into the Abyss', description: 'The deeper you go, the darker it gets...', genre: 'Adventure', releaseDate: '2023-02-01', score: '7/10', image: 'images/your-image.jpg' }
 ];
 
-const renderReviews = (filteredReviews = reviews) => {
+let currentPage = 1;
+let reviewsPerPage = 5;
+let filteredReviews = reviews;
+
+const renderReviews = () => {
     const container = document.getElementById('reviews-container');
-    container.innerHTML = filteredReviews.map(review => `
+    const startIndex = (currentPage - 1) * reviewsPerPage;
+    const endIndex = startIndex + reviewsPerPage;
+    const reviewsToDisplay = filteredReviews.slice(startIndex, endIndex);
+
+    container.innerHTML = reviewsToDisplay.map(review => `
         <div class="review">
             <div class="review-container">
                 <img src="${review.image}" alt="${review.title} Artwork">
@@ -28,16 +36,20 @@ const renderReviews = (filteredReviews = reviews) => {
             </div>
         </div>
     `).join('');
+
+    document.getElementById('prev-page').disabled = currentPage === 1;
+    document.getElementById('next-page').disabled = currentPage * reviewsPerPage >= filteredReviews.length;
 };
 
 const searchReviews = () => {
     const query = document.getElementById('search-bar').value.toLowerCase();
-    const filteredReviews = reviews.filter(review =>
+    filteredReviews = reviews.filter(review =>
         review.title.toLowerCase().includes(query) ||
         review.description.toLowerCase().includes(query) ||
         review.genre.toLowerCase().includes(query)
     );
-    renderReviews(filteredReviews);
+    currentPage = 1; // Reset to the first page after search
+    renderReviews();
 };
 
 const filterReviews = () => {
@@ -47,5 +59,12 @@ const filterReviews = () => {
     }
 };
 
+// Change page for pagination
+const changePage = (direction) => {
+    currentPage += direction;
+    renderReviews();
+};
+
 // Initially render all reviews
 renderReviews();
+
