@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reviews - The Creepy Blog</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>All Reviews</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <button id="genre-filter">Genres</button>
-            <ul id="genre-dropdown" class="hidden"></ul>
-        </nav>
-    </header>
-    <main id="reviews-container"></main>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/reviews.js"></script>
+  <header>
+    <h1>The Cabinet of Extremities</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button class="dropdown-button">Genres</button>
+        <div class="dropdown-content" id="genre-dropdown"></div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <h2>Reviews</h2>
+    <div id="reviews-container">
+      <!-- Reviews will load dynamically -->
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 The Cabinet of Extremities</p>
+  </footer>
+  <script src="scripts.js"></script>
 </body>
 </html>
+
 
