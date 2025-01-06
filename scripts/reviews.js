@@ -7,7 +7,7 @@ const reviews = [
         genre: "Spoken Word",
         date: "2025-01-01",
         score: "9/10",
-        image: "images/projekt-misanthropia.jpg"  // Add the path to your image here
+        image: "images/86179-projekt-misanthropia.jpg"  // Add the path to your image here
     },
     {
         title: "Wolf Eyes - Burned Mind",
