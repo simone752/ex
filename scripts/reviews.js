@@ -12,11 +12,16 @@ const reviews = [
     { title: 'Into the Abyss', description: 'The deeper you go, the darker it gets...', genre: 'Adventure', releaseDate: '2023-02-01', score: '7/10', image: 'images/your-image.jpg' }
 ];
 
-let filteredReviews = reviews;
+let currentPage = 1;
+const reviewsPerPage = 5;
 
-const renderReviews = (filteredReviews = reviews) => {
+const renderReviews = () => {
     const container = document.getElementById('reviews-container');
-    container.innerHTML = filteredReviews.map(review => `
+    const startIndex = (currentPage - 1) * reviewsPerPage;
+    const endIndex = startIndex + reviewsPerPage;
+    const reviewsToDisplay = reviews.slice(startIndex, endIndex);
+
+    container.innerHTML = reviewsToDisplay.map(review => `
         <div class="review">
             <div class="review-container">
                 <img src="${review.image}" alt="${review.title} Artwork">
@@ -30,19 +35,18 @@ const renderReviews = (filteredReviews = reviews) => {
             </div>
         </div>
     `).join('');
+
+    document.getElementById('prev-page').disabled = currentPage === 1;
+    document.getElementById('next-page').disabled = currentPage * reviewsPerPage >= reviews.length;
 };
 
-const filterReviews = () => {
-    const query = document.getElementById('search-bar').value.toLowerCase();
-    filteredReviews = reviews.filter(review =>
-        review.title.toLowerCase().includes(query) ||
-        review.description.toLowerCase().includes(query) ||
-        review.genre.toLowerCase().includes(query)
-    );
-    renderReviews(filteredReviews);
+const changePage = (direction) => {
+    currentPage += direction;
+    renderReviews();
 };
 
 // Initially render all reviews
 renderReviews();
+
 
 
