@@ -63,7 +63,7 @@ button:hover {
 }
 
 #reviews-container {
-    display: block; /* Changed from flex to block to stack reviews vertically */
+    display: block; /* Ensure reviews are stacked vertically */
     margin-top: 20px;
 }
 
@@ -71,9 +71,9 @@ button:hover {
     background-color: #222;
     border: 1px solid #444;
     padding: 20px;
-    margin-bottom: 20px; /* Add space between reviews */
+    margin-bottom: 20px; /* Space between reviews */
     width: 100%; /* Make each review take full width */
-    max-width: 700px; /* Optional: limit the width for better readability */
+    max-width: 700px; /* Limit width for readability */
     margin-left: auto;
     margin-right: auto;
 }
@@ -84,18 +84,23 @@ button:hover {
 }
 
 .review img {
-    width: 100%;
+    width: 100%; /* Ensure images are responsive */
     height: auto;
+    max-width: 150px; /* Set max width for consistency */
     margin-bottom: 10px;
+    align-self: center; /* Center the image */
 }
 
 .review h3 {
     color: #f00;
+    font-size: 20px; /* Slightly bigger title for emphasis */
+    margin-bottom: 10px;
 }
 
 .review p {
     font-size: 14px;
     color: #ddd;
+    margin-bottom: 10px;
 }
 
 #pagination {
@@ -106,4 +111,5 @@ button:hover {
 #pagination button {
     margin: 5px;
 }
+
 
