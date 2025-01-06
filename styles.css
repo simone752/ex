@@ -16,6 +16,8 @@ header {
 h1, h2 {
     color: #f00;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 nav a {
@@ -32,8 +34,27 @@ nav a:hover {
     background-color: #444;
 }
 
+.search-container {
+    margin-top: 10px;
+}
+
+#search-bar {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #f00;
+    width: 200px;
+    border-radius: 5px;
+}
+
+#search-bar::placeholder {
+    color: #888;
+}
+
 main {
     padding: 20px;
+    text-align: center;
 }
 
 #reviews-container {
@@ -46,6 +67,7 @@ main {
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .review h3 {
@@ -71,4 +93,27 @@ main {
 .review-container {
     display: flex;
     align-items: center;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #222;
+    color: #f00;
+    border: 1px solid #f00;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #444;
+}
+
+.pagination button:disabled {
+    background-color: #333;
+    cursor: not-allowed;
 }
