@@ -60,3 +60,15 @@ main {
 .review strong {
     color: #f00;
 }
+
+.review img {
+    max-width: 150px;
+    border-radius: 5px;
+    margin-right: 15px;
+    float: left;
+}
+
+.review-container {
+    display: flex;
+    align-items: center;
+}
