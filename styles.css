@@ -1,35 +1,59 @@
-/* Genre Button - Updated Style */
-button.genre-button {
-    background-color: #444;
+/* General Styles for Dark Theme */
+body {
+    font-family: 'Arial', sans-serif;
     color: #e0e0e0;
-    border: 1px solid #666;
-    padding: 12px 25px;
-    font-size: 1.1em;
-    cursor: pointer;
-    border-radius: 8px;
+    background-color: #121212;  /* Deep black background */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: normal;
+    color: #f44336;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    background-color: #1c1c1c;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 15px;
+    margin: 0 15px;
     letter-spacing: 1px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin: 10px;
-    display: inline-block;
+    transition: color 0.3s ease;
 }
 
-button.genre-button:hover {
-    background-color: #f44336;
-    color: #fff;
-    transform: translateY(-3px);
+nav a:hover {
+    color: #f44336;
 }
 
-button.genre-button:focus {
-    outline: none;
+nav a.active {
+    color: #f44336;
+    font-weight: bold;
 }
 
-/* Center Search Box */
+/* Search Bar Container */
 #search-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px auto;
+    margin: 50px auto;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 #search-container input {
@@ -49,11 +73,10 @@ button.genre-button:focus {
     outline: none;
 }
 
-/* Search Button */
 #search-container button {
     padding: 12px 20px;
     font-size: 1.2em;
-    background-color: #f44336;  /* Same as "Read More" button */
+    background-color: #f44336;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -74,7 +97,7 @@ button.genre-button:focus {
     outline: none;
 }
 
-/* Review Section */
+/* Reviews Section */
 #reviews-container {
     display: flex;
     flex-direction: column;
@@ -91,17 +114,19 @@ button.genre-button:focus {
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid #333;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .review:hover {
     transform: translateY(-5px);
     background-color: #333;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .review img {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     border-radius: 8px;
     margin-bottom: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -111,19 +136,12 @@ button.genre-button:focus {
     font-size: 1.8em;
     margin-bottom: 15px;
     color: #f44336;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .review p {
     font-size: 1.1em;
     color: #ccc;
     margin-bottom: 10px;
-}
-
-.review .full-review p {
-    font-size: 1.2em;
-    color: #ddd;
 }
 
 .review .read-more-btn {
@@ -168,20 +186,17 @@ button.genre-button:focus {
     color: #fff;
 }
 
-#pagination button:focus {
-    outline: none;
-}
-
 /* Footer */
 footer {
     background-color: #1c1c1c;
     color: #bbb;
     text-align: center;
-    padding: 20px 0;
-    font-size: 1em;
+    padding: 30px 0;
+    font-size: 1.2em;
     border-top: 2px solid #333;
 }
 
 footer p {
     margin: 0;
 }
+
