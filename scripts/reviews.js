@@ -9,7 +9,7 @@ const reviews = [
     },
     {
         title: "Wolf Eyes - Burned Mind",
-        description: "Wolf eyes are quite a famous band in the realm of noise...",
+        description: "Wolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noiseWolf eyes are quite a famous band in the realm of noise...",
         genre: "Power Electronics",
         date: "2024-12-15",
         score: "7/10",
