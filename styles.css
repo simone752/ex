@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     background-color: #000;
     color: #fff;
@@ -20,7 +21,7 @@ nav {
     margin-top: 10px;
 }
 
-a {
+a, button {
     color: #f00;
     text-decoration: none;
     border: 1px solid #f00;
@@ -29,87 +30,56 @@ a {
     cursor: pointer;
 }
 
-a:hover {
+button:hover, a:hover {
     background-color: #222;
 }
 
 .search-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-input[type="text"] {
-    background-color: #222;
-    color: #fff;
-    border: 1px solid #f00;
-    padding: 5px;
-    font-size: 16px;
-    width: 250px;
-}
-
-button {
-    background-color: #111;
-    color: #f00;
-    border: 1px solid #f00;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #222;
-}
-
-#reviews-container {
-    display: block; /* Ensure reviews are stacked vertically */
-    margin-top: 20px;
-}
-
-.review {
-    background-color: #222;
-    border: 1px solid #444;
-    padding: 20px;
-    margin-bottom: 20px; /* Space between reviews */
-    width: 100%; /* Make each review take full width */
-    max-width: 700px; /* Limit width for readability */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.review-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.review img {
-    width: 100%; /* Ensure images are responsive */
-    height: auto;
-    max-width: 150px; /* Set max width for consistency */
-    margin-bottom: 10px;
-    align-self: center; /* Center the image */
-}
-
-.review h3 {
-    color: #f00;
-    font-size: 20px; /* Slightly bigger title for emphasis */
-    margin-bottom: 10px;
-}
-
-.review p {
-    font-size: 14px;
-    color: #ddd;
-    margin-bottom: 10px;
-}
-
-#pagination {
-    margin-top: 20px;
+    margin: 20px;
     text-align: center;
 }
 
-#pagination button {
-    margin: 5px;
+#search-input {
+    padding: 5px;
+    font-size: 16px;
+    width: 60%;
+    border: 1px solid #f00;
+    background-color: #111;
+    color: #fff;
+}
+
+#search-button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: 1px solid #f00;
+    background-color: #111;
+}
+
+#reviews-container {
+    margin: 20px;
+}
+
+.review {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f00;
+    padding-bottom: 20px;
+}
+
+.review img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+    float: left;
+}
+
+#pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    margin: 0 5px;
 }
 
 
