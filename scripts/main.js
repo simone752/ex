@@ -8,7 +8,7 @@ document.getElementById('search-button').addEventListener('click', () => {
 
 // Display a welcome message dynamically
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Welcome to The Underground Blog!");
+    console.log("Welcome to The Cabinet of Extremities!");
 });
 
 // Scroll to Top Button Functionality
