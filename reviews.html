@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Reviews - The Creepy Blog</title>
+    <title>Reviews - The Cabinet of Extremities</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,14 +13,15 @@
             <a href="index.html">Home</a>
         </nav>
     </header>
-    <main id="reviews-container">
-        <!-- Reviews will be displayed here -->
+    <main>
+        <div id="reviews-container"></div>
+        <div id="pagination">
+            <button id="prev-page" onclick="changePage(-1)">Previous</button>
+            <button id="next-page" onclick="changePage(1)">Next</button>
+        </div>
     </main>
-    <div class="pagination">
-        <button id="prev-btn" onclick="changePage(-1)">Previous</button>
-        <button id="next-btn" onclick="changePage(1)">Next</button>
-    </div>
     <script src="scripts/reviews.js"></script>
 </body>
 </html>
+
 
