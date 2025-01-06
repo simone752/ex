@@ -144,3 +144,52 @@ footer {
     color: #111;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    #actions .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+/* Center Buttons in Actions Section */
+#actions .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Scroll-to-Top Button */
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 18px;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    display: none;
+}
+
+#scroll-to-top:hover {
+    background-color: #ff5555;
+}
+
