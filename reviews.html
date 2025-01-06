@@ -1,69 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Reviews</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - The Creepy Blog</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>All Reviews</h1>
-
-  <h2>Filter by Genre</h2>
-  <select id="genre-filter">
-    <option value="">All Genres</option>
-  </select>
-
-  <div id="reviews">
-    <!-- Reviews will be dynamically populated here -->
-  </div>
-
-  <script>
-    // Load reviews from localStorage
-    const reviews = JSON.parse(localStorage.getItem("reviews") || "[]");
-
-    // Display reviews
-    function displayReviews(genreFilter = null) {
-      const reviewList = document.getElementById("reviews");
-      reviewList.innerHTML = "";
-      const filteredReviews = genreFilter
-        ? reviews.filter((r) => r.genre.toLowerCase() === genreFilter.toLowerCase())
-        : reviews;
-
-      filteredReviews.forEach(({ text, date, genre }) => {
-        const reviewDiv = document.createElement("div");
-        reviewDiv.className = "review";
-        reviewDiv.innerHTML = `
-          <p>${text}</p>
-          <p><strong>Date:</strong> ${date}</p>
-          <p><strong>Genre:</strong> ${genre}</p>
-        `;
-        reviewList.appendChild(reviewDiv);
-      });
-    }
-
-    // Update genre dropdown
-    function updateGenreDropdown() {
-      const genres = [...new Set(reviews.map((r) => r.genre))]; // Unique genres
-      const dropdown = document.getElementById("genre-filter");
-      dropdown.innerHTML = '<option value="">All Genres</option>';
-      genres.forEach((genre) => {
-        const option = document.createElement("option");
-        option.value = genre;
-        option.textContent = genre;
-        dropdown.appendChild(option);
-      });
-    }
-
-    // Handle genre filtering
-    document.getElementById("genre-filter").addEventListener("change", (e) => {
-      displayReviews(e.target.value);
-    });
-
-    // Initialize page
-    displayReviews();
-    updateGenreDropdown();
-  </script>
+    <header>
+        <h1>All Reviews</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <button id="genre-filter">Genres</button>
+            <ul id="genre-dropdown" class="hidden"></ul>
+        </nav>
+    </header>
+    <main id="reviews-container"></main>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/reviews.js"></script>
 </body>
 </html>
 
