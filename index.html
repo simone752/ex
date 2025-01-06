@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE CABINET OF EXTREMITY</title>
+    <title>The Cabinet of Extremity</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>THE CABINET OF EXTREMITY</h1>
+        <h1>The Cabinet of Extremity</h1>
     </header>
-
+    
     <nav>
         <a href="index.html" class="active">Home</a>
         <a href="reviews.html">All Reviews</a>
-        <div id="search-container">
-            <input type="text" id="search-input" placeholder="Search the blog...">
-            <button id="search-button">Search</button>
-        </div>
     </nav>
 
-    <section id="main-content">
-        <article>
-            <h2>Welcome to The Cabinet of Extremity</h2>
-            <p>Dive into the dark world of experimental music, dissonant death metal, and industrial soundscapes. Explore reviews, comment, and search through the shadows.</p>
-            <p><a href="reviews.html">Start exploring reviews →</a></p>
-        </article>
-    </section>
-
+    <main>
+        <section id="intro">
+            <p>Welcome to <strong>The Cabinet of Extremity</strong>, your portal into the darkest corners of music. Explore our reviews of obscure, haunting, and boundary-pushing albums.</p>
+        </section>
+        
+        <section id="featured-reviews">
+            <h2>Featured Reviews</h2>
+            <div id="featured-container">
+                <!-- Featured reviews will be dynamically populated -->
+            </div>
+        </section>
+        
+        <section id="actions">
+            <button onclick="window.location.href='reviews.html'">Explore All Reviews</button>
+            <button onclick="document.getElementById('search-input').focus()">Search Reviews</button>
+        </section>
+    </main>
+    
     <footer>
-        <p>© 2025 THE CABINET OF EXTREMITY. All Rights Reserved.</p>
+        <p>© 2025 The Cabinet of Extremity. All Rights Reserved.</p>
     </footer>
-
-    <script src="scripts/main.js"></script>
+    
+    <script src="main.js"></script>
 </body>
 </html>
