@@ -1,53 +1,6 @@
-// Hardcoded Reviews Array
+// Hardcoded Reviews Array (example reviews, same as before)
 const reviews = [
-    {
-        title: "Projekt Misanthropia",
-        description: "A dark journey through dystopian landscapes, blending industrial beats with haunting melodies.",
-        genre: "Industrial",
-        date: "2024-01-01",
-        image: "images/projekt-misanthropia.jpg", // Static image path
-        score: "9/10"
-    },
-    {
-        title: "The Silent Echo",
-        description: "A slow-building horror, where silence is the most terrifying element.",
-        genre: "Horror",
-        date: "2023-12-15",
-        image: "images/silent-echo.jpg", // Static image path
-        score: "8/10"
-    },
-    {
-        title: "Phantom Frequencies",
-        description: "Soundscapes that manipulate the listener's perception of time and space.",
-        genre: "Experimental",
-        date: "2024-02-01",
-        image: "images/phantom-frequencies.jpg", // Static image path
-        score: "7/10"
-    },
-    {
-        title: "Noisy Nightmares",
-        description: "An eerie auditory experience where noises blur into the fabric of nightmares.",
-        genre: "Noise",
-        date: "2024-03-05",
-        image: "images/noisy-nightmares.jpg",
-        score: "6/10"
-    },
-    {
-        title: "The Black Wave",
-        description: "A journey into the unknown, with a soundtrack that drowns you in darkness.",
-        genre: "Darkwave",
-        date: "2023-11-22",
-        image: "images/black-wave.jpg",
-        score: "9/10"
-    },
-    {
-        title: "Cacophony of Souls",
-        description: "Chaotic, relentless noise that will challenge the listener's mind.",
-        genre: "Noise",
-        date: "2024-04-10",
-        image: "images/cacophony-souls.jpg",
-        score: "5/10"
-    }
+    // Your review objects go here
 ];
 
 // Function to render reviews (with pagination)
@@ -91,3 +44,4 @@ const renderReviews = (searchQuery = "", page = 1) => {
 // Initialize the reviews list and apply search if a query is provided
 const initialSearchQuery = new URLSearchParams(window.location.search).get('search') || '';
 renderReviews(initialSearchQuery);
+
