@@ -69,7 +69,8 @@ nav a:hover {
 }
 
 #search-button:hover {
-    background-color: #f77;
+    background-color: #f00;
+    color: #111;
 }
 
 /* Main Content */
