@@ -155,7 +155,7 @@ nav a:hover {
 #search-container input {
     padding: 12px;
     font-size: 1.2em;
-    width: 300px;
+    width: 250px;
     border-radius: 8px;
     border: 1px solid #444;
     background-color: #222;
@@ -180,17 +180,19 @@ nav a:hover {
     text-transform: uppercase;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 #search-container button:hover {
     background-color: #d32f2f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 #search-container button:focus {
     outline: none;
 }
 
-/* Footer (Optional Additions for a Minimal Blog) */
+/* Footer */
 footer {
     background-color: #1c1c1c;
     color: #bbb;
@@ -202,105 +204,6 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-/* Blog Post Styling */
-#blog-posts-container {
-    margin: 30px auto;
-    width: 80%;
-    max-width: 1000px;
-}
-
-.blog-post {
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #333;
-    transition: transform 0.3s ease;
-}
-
-.blog-post:hover {
-    transform: translateY(-5px);
-    background-color: #333;
-}
-
-.blog-post h2 {
-    color: #f44336;
-    font-size: 2em;
-    letter-spacing: 1px;
-}
-
-.blog-post p {
-    color: #ccc;
-    font-size: 1.2em;
-}
-
-.blog-post a {
-    color: #f44336;
-    text-decoration: none;
-}
-
-.blog-post a:hover {
-    color: #d32f2f;
-}
-
-/* Blog List and Sidebar */
-#blog-sidebar {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    border: 1px solid #333;
-}
-
-#blog-sidebar h3 {
-    color: #f44336;
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-#blog-sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#blog-sidebar ul li {
-    padding: 10px;
-    font-size: 1.1em;
-    color: #ccc;
-}
-
-#blog-sidebar ul li:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-/* General Blog Navigation Styles */
-#blog-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-#blog-nav button {
-    padding: 10px 15px;
-    background-color: #f44336;
-    color: #fff;
-    border: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-#blog-nav button:hover {
-    background-color: #d32f2f;
-}
-
-#blog-nav button:focus {
-    outline: none;
 }
 
 
