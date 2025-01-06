@@ -8,8 +8,16 @@ const reviews = [
         score: "9/10",
         image: "images/projekt-misanthropia.jpg"
     },
-    // Additional reviews...
+    {
+        title: "Wolf Eyes - Burned Mind",
+        description: "Wolf eyes are quite a famous band in the realm of noise...",
+        genre: "Power Electronics",
+        date: "2024-12-15",
+        score: "7/10",
+        image: "images/dark-symphony.jpg"
+    }
 ];
+
 
 const renderReviews = (searchQuery = "") => {
     const filteredReviews = reviews.filter(review =>
