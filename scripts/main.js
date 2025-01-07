@@ -1,62 +1,57 @@
-// Wait for the DOM to load
-document.addEventListener("DOMContentLoaded", () => {
-    // Identify the page based on the body or specific elements
-    const isHomePage = document.querySelector("body").classList.contains("home");
-    const isReviewsPage = document.querySelector("body").classList.contains("reviews");
+document.addEventListener('DOMContentLoaded', () => {
+    const searchButton = document.getElementById('search-button');
+    const searchBar = document.getElementById('search-bar');
+    const reviewsContainer = document.getElementById('reviews-container');
 
-    // Search functionality
-    if (isHomePage || isReviewsPage) {
-        const searchBar = document.getElementById("search-bar");
-        const searchButton = document.getElementById("search-button");
-
-        if (searchBar && searchButton) {
-            searchButton.addEventListener("click", () => {
-                const query = searchBar.value.toLowerCase().trim();
-                if (isHomePage) {
-                    // Redirect to reviews page with search query
-                    window.location.href = `reviews.html?search=${encodeURIComponent(query)}`;
-                } else if (isReviewsPage) {
-                    // Handle search on the reviews page
-                    fetch("reviews.json")
-                        .then((response) => response.json())
-                        .then((reviews) => {
-                            const filteredReviews = reviews.filter((review) =>
-                                review.text.toLowerCase().includes(query) ||
-                                review.title.toLowerCase().includes(query)
-                            );
-                            renderReviews(filteredReviews);
-                        })
-                        .catch((error) => console.error("Error loading reviews:", error));
-                }
-            });
-        }
-    }
-
-    // Render reviews only on the reviews page
-    if (isReviewsPage) {
-        fetch("reviews.json")
-            .then((response) => response.json())
-            .then((reviews) => renderReviews(reviews))
-            .catch((error) => console.error("Error loading reviews:", error));
-    }
-});
-
-// Render reviews function
-function renderReviews(reviews) {
-    const reviewsContainer = document.getElementById("reviews-container");
-    if (!reviewsContainer) {
-        console.error("Error: Missing essential elements in the DOM.");
+    if (!searchButton || !searchBar || !reviewsContainer) {
+        console.error('Error: Missing essential elements in the DOM.');
         return;
     }
 
-    reviewsContainer.innerHTML = ""; // Clear existing content
-    reviews.forEach((review) => {
-        const reviewElement = document.createElement("article");
-        reviewElement.classList.add("review");
-        reviewElement.innerHTML = `
-            <h3>${review.title}</h3>
-            <p>${review.text}</p>
-        `;
-        reviewsContainer.appendChild(reviewElement);
+    // Function to load reviews
+    async function loadReviews() {
+        try {
+            const response = await fetch('reviews.json');
+            const reviews = await response.json();
+            return reviews;
+        } catch (error) {
+            console.error('Error loading reviews:', error);
+            return [];
+        }
+    }
+
+    // Function to render reviews
+    async function renderReviews(searchQuery = '') {
+        const reviews = await loadReviews();
+        const query = searchQuery.toLowerCase();
+
+        // Filter reviews based on the search query
+        const filteredReviews = reviews.filter(review =>
+            review.title.toLowerCase().includes(query) || 
+            review.description.toLowerCase().includes(query)
+        );
+
+        // Populate the reviews container
+        reviewsContainer.innerHTML = filteredReviews.length
+            ? filteredReviews.map(review => `
+                <div class="review">
+                    <img src="${review.image}" alt="${review.title}">
+                    <h3>${review.title}</h3>
+                    <p>${review.description}</p>
+                    <p><strong>Genre:</strong> ${review.genre}</p>
+                    <p><strong>Release Date:</strong> ${review.date}</p>
+                    <p><strong>Score:</strong> ${review.score}</p>
+                </div>
+            `).join('')
+            : '<p>No reviews found matching your search.</p>';
+    }
+
+    // Add event listener for the search button
+    searchButton.addEventListener('click', () => {
+        const searchQuery = searchBar.value.trim();
+        renderReviews(searchQuery);
     });
-}
+
+    // Load all reviews on page load
+    renderReviews();
+});
