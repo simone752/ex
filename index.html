@@ -3,24 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Underground Blog</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>The Cabinet of Extremities</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="home">
+<body>
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="reviews.html">Reviews</a>
-            <div class="search-container">
-                <input type="text" id="search-bar" placeholder="Search reviews..." />
+        <h1>The Cabinet of Extremities</h1>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="reviews.html">All Reviews</a>
+        </div>
+            <div id="search-container">
+                <input type="text" id="search-bar" placeholder="Search for reviews...">
                 <button id="search-button">Search</button>
             </div>
-        </nav>
-    </header>
+    </nav>
+
     <main>
-        <h1>Welcome to the Underground Blog</h1>
-        <p>Your source for authentic and unfiltered reviews.</p>
+        <section id="intro">
+            <h2>Welcome to the Cabinet</h2>
+            <p>
+                Discover the darkest corners of the underground music scene. From industrial despair to dissonant death metal, 
+                delve into reviews that capture the essence of extremity.
+            </p>
+        </section>
+
+        <section id="action-buttons">
+            <button onclick="window.location.href='reviews.html'">Explore All Reviews</button>
+        </section>
+
+        <section id="reviews-container">
+            <!-- Reviews dynamically inserted here -->
+        </section>
     </main>
+
+    <footer>
+        <p>© 2025 The Cabinet of Extremities. All Rights Reserved.</p>
+    </footer>
+
     <script src="scripts/main.js"></script>
 </body>
 </html>
