@@ -2,7 +2,7 @@
     {
         "title": "Stalaggh - Projekt Misanthropia",
         "description": "This is often considered one of the most extreme albums ever because of the nature of the reecordings it consists of. During the runtime of this project you'll hear the screams of victims of abuse. The result is a dark and uncomfortable listening experience, though it lacks the musical depth and variety of other more interesting experiments like this one, for example the works of Whitehouse. I don't consider this to be the most extreme thing ever, but for sure the material on here is quite depressing.",
-        "genre": "Spoken Word",
+        "genre": "Spoken Word", "Experimental",
         "date": "2025-01-01",
         "score": "3/10",
         "image": "images/86179-projekt-misanthropia.jpg"
@@ -37,7 +37,7 @@
         "genre": "Death Industrial",
         "date": "2014-01-01",
         "score": "6.5/10",
-        "image": "images/bestial-burden.jpg"
+        "image": "images/18961-bestial-burden.jpg"
     },
     {
         "title": "Masonna - Spectrum Ripper",
@@ -45,7 +45,7 @@
         "genre": "Death Industrial",
         "date": "1998-01-01",
         "score": "4.5/10",
-        "image": "images/bestial-burden.jpg"
+        "image": "images/302761-spectrum-ripper.jpg"
     },
     {
         "title": "Nurse with Wound - Homotopy to Marie",
@@ -58,9 +58,17 @@
     {
         "title": "Revenge - Scum.Collapse.Eradication",
         "description": "Each song dives deeper in this atmosphere of claustrophobia and rawness thanks to these underworldly vocals, akin to a grizzly bear, absolutely grating mix and prepotent drums. Brutal",
-        "genre": "Experimental",
+        "genre": "War Metal",
         "date": "2012-01-01",
         "score": "6.5/10",
         "image": "images/scumcollapseeradication.jpg"
+    },
+    {
+        "title": "Pink Siifu - NEGRO",
+        "description": "Not an easy album to sit through, “NEGRO” is an experimental noise-hip hop mix that sound as raw and confusing as possible, with clear influences from industrial hip hop groupm Death Grips.The voice sounds as if coming from some shitty loudspeaker and the background jazzy instrumentation is muddled and lost in the mix. It’s jaw dropping in its weirdness and its chaos is quite unmatched in the hip hop landscape",
+        "genre": "Industrail Hip Hop",
+        "date": "2020-09-04",
+        "score": "6.5/10",
+        "image": "images/228490-negro.jpg"
     }
 ]
